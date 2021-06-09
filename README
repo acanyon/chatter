@@ -1,0 +1,8 @@
+** Instalation
+npm install
+
+** Run Dev Server (two windows)
+npm start
+node server.js
+
+open: localhost:3000
