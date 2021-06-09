@@ -6,3 +6,8 @@ npm start
 node server.js
 
 open: localhost:3000
+
+
+** TODO -
+utilize React Context for state management
+  https://reactjs.org/docs/context.html
