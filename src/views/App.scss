@@ -1,0 +1,116 @@
+@import '../styles/plugins';
+
+.body {
+  background-color: $tan;
+  font-family: "Helvetica", sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: $white;
+  padding: 15px 0 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoLink {
+  @include link;
+  padding-top: 5px;
+  text-align: right;
+  color: $black;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  &:visited {
+    color: $black;
+  }
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.logoContainer {
+  margin: auto;
+  width: 160px;
+}
+
+.subpage {
+  padding: 0 0 2px 5px;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.linkSpacer {
+  display: inline-block;
+  &:before {
+    content: '-';
+    padding: 0 5px;
+  }
+}
+
+.container {
+  @include contentWrapperWide;
+  align-items: flex-end;
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: space-between;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.navigational {
+  @include title;
+  text-align: right;
+  padding-bottom: 2px;
+
+  .link, .link:visited {
+    color: $black;
+  }
+}
+
+.footer {
+  background-color: $gray;
+  padding: 40px 0;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.logout {
+  @include link;
+}
+
+.link {
+  @include link;
+
+  &.currentLink {
+    text-decoration: underline;
+  }
+}
+
+.mailto {
+  @include link;
+  text-transform: none;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    display: block;
+  }
+
+  .navigational {
+    text-align: center;
+  }
+
+  .logoContainer {
+    margin: 0;
+  }
+
+  .logoLink {
+    margin-bottom: 15px;
+  }
+}
+

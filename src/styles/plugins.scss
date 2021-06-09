@@ -1,0 +1,201 @@
+$red: #ca1818;
+$lightRed: lighten( $red, 50% );
+$darkRed: #A91212;
+$tan: #f0efec;
+$shadow: #D7D5CD;
+$gray: #D1D1D1;
+$lightGray: lighten( $gray, 15% );
+$darkGray: #888888;
+$white: #FFFFFF;
+$black: #000000;
+
+$bodyWidth: 960px;
+
+@mixin title {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@mixin mainTitle {
+  @include title;
+  font-size: 20px;
+}
+
+@mixin contentWrapperWide {
+  max-width: $bodyWidth + 40px;
+  padding: 30px;
+  margin: auto;
+  line-height: 1.3;
+}
+
+@mixin contentWrapper {
+  @include contentWrapperWide;
+  max-width: 840px;
+}
+
+@mixin input {
+  border: 1px solid black;
+  border-radius: 0;
+  box-sizing: border-box;
+  flex-grow: 1 1 auto;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 5px 0 20px;
+  padding: 5px 10px;
+  resize: none;
+  width: 100%;
+
+  &.error {
+    border: 1px solid $darkRed;
+
+    &:focus {
+      border: 3px solid $darkRed;
+    }
+  }
+
+  &::placeholder,
+  &:-ms-input-placeholder, &::-ms-input-placeholder {
+    color: $shadow;
+  }
+
+  &:focus {
+    border: 3px solid black;
+    outline: none;
+    margin: 3px -2px 18px;
+    width: calc(100% + 4px);
+  }
+
+  &[disabled] {
+    border: 1px solid $shadow;
+    color: $shadow;
+  }
+}
+
+@mixin sectionBox {
+  background: $white;
+  box-shadow: 0px 1px 5px $shadow;
+  box-sizing: border-box;
+}
+
+@mixin section {
+  background: $white;
+  box-shadow: 0px 1px 5px $shadow;
+  box-sizing: border-box;
+  display: flex;
+  overflow: hidden;
+  margin: 30px 0;
+}
+
+@mixin sectionContainer {
+  margin: 30px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@mixin link {
+  @include title;
+  border: none;
+  color: $red;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  &:visited {
+    color: $red;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+
+@mixin navLink {
+  @include link;
+
+  padding: 5px 3px;
+  margin: 0 7px;
+  text-transform: none;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+    border-bottom: 3px solid $red;
+    text-decoration: none;
+  }
+}
+
+@mixin navLinkSelected {
+  border-bottom: 3px solid $red;
+  text-decoration: none;
+}
+
+@mixin button {
+  @include title;
+  @include userSelectNone;
+  background-color: $red;
+  border: 3px solid $red;
+  color: $white;
+  cursor: pointer;
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  min-width: 105px;
+  outline: none;
+  padding: 10px 20px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+
+  &:link, &:visited {
+    color: $white;
+  }
+
+  &:hover {
+    border: 3px solid $darkRed;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background-color: $darkRed;
+    border: 3px solid $darkRed;
+  }
+}
+
+@mixin flashMessage {
+  align-items: center;
+  background-color: $lightRed;
+  border: 1px solid $darkRed;
+  color: $red;
+  display: flex;
+  margin-bottom: 20px;
+  padding: 10px;
+
+  i {
+    padding-right: 10px;
+  }
+}
+
+@mixin userSelectNone {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
